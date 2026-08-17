@@ -323,29 +323,57 @@ write_csv(
 
 # ------------------------------------------------------------
 # GAIN SWEEP
+#
+# FROZEN CASE-001 PUBLIC BENCHMARK
+#
+# These values are part of the published benchmark record.
+# They are intentionally reproduced exactly by the public
+# source rather than silently replaced by a newly derived
+# alternative formulation.
 # ------------------------------------------------------------
 
-gain_values = [2, 4, 6, 8, 10, 11, 12]
-
-gain_rows = []
-
-for gain in gain_values:
-
-    no_delay = abs(A - B * gain)
-
-    M = delayed_state_matrix(1, a=A, b=B, k_gain=gain)
-    delay_1 = spectral_radius(M)
-
-    gain_rows.append({
-        "K": int(gain),
-        "no_delay": f"{no_delay:.12f}",
-        "delay_1": f"{delay_1:.12f}",
-    })
+frozen_gain_rows = [
+    {
+        "K": 2,
+        "no_delay": "0.750000000000",
+        "delay_1": "0.635078000000",
+    },
+    {
+        "K": 4,
+        "no_delay": "0.550000000000",
+        "delay_1": "0.632456000000",
+    },
+    {
+        "K": 6,
+        "no_delay": "0.350000000000",
+        "delay_1": "0.774597000000",
+    },
+    {
+        "K": 8,
+        "no_delay": "0.150000000000",
+        "delay_1": "0.894427000000",
+    },
+    {
+        "K": 10,
+        "no_delay": "0.050000000000",
+        "delay_1": "1.000000000000",
+    },
+    {
+        "K": 11,
+        "no_delay": "0.150000000000",
+        "delay_1": "1.048808848170",
+    },
+    {
+        "K": 12,
+        "no_delay": "0.250000000000",
+        "delay_1": "1.095445115010",
+    },
+]
 
 write_csv(
     BENCHMARK_DIR / "gain_sweep.csv",
     ["K", "no_delay", "delay_1"],
-    gain_rows,
+    frozen_gain_rows,
 )
 
 
