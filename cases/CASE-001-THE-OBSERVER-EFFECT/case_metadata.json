@@ -1,0 +1,185 @@
+{
+  "case_id": "CASE-001",
+  "title": "THE OBSERVER EFFECT",
+  "type": "synthetic_reproducible_investigation",
+  "system": {
+    "A": 0.95,
+    "B": 0.1,
+    "K": 11.0,
+    "N": 120,
+    "x0": 1.0
+  },
+  "baseline": {
+    "spectral_radius": 0.15,
+    "stable": true,
+    "max_abs_state": 1.0,
+    "final_abs_state": 0.0
+  },
+  "failure": {
+    "delay_samples": 1,
+    "spectral_radius": 1.048809,
+    "stable": false,
+    "max_abs_state": 326.303262296,
+    "final_abs_state": 326.303262296
+  },
+  "eigenvalues_delay_1": [
+    "0.475+0.9350802104632522j",
+    "0.475-0.9350802104632522j"
+  ],
+  "delay_sweep": [
+    {
+      "delay": 0,
+      "rho": 0.15,
+      "stable": true
+    },
+    {
+      "delay": 1,
+      "rho": 1.048809,
+      "stable": false
+    },
+    {
+      "delay": 2,
+      "rho": 1.176913,
+      "stable": false
+    },
+    {
+      "delay": 3,
+      "rho": 1.198712,
+      "stable": false
+    },
+    {
+      "delay": 4,
+      "rho": 1.196151,
+      "stable": false
+    },
+    {
+      "delay": 5,
+      "rho": 1.18714,
+      "stable": false
+    },
+    {
+      "delay": 6,
+      "rho": 1.176748,
+      "stable": false
+    }
+  ],
+  "gain_sweep": [
+    {
+      "K": 2,
+      "no_delay": 0.75,
+      "delay_1": 0.635078
+    },
+    {
+      "K": 4,
+      "no_delay": 0.55,
+      "delay_1": 0.632456
+    },
+    {
+      "K": 6,
+      "no_delay": 0.35,
+      "delay_1": 0.774597
+    },
+    {
+      "K": 8,
+      "no_delay": 0.15,
+      "delay_1": 0.894427
+    },
+    {
+      "K": 10,
+      "no_delay": 0.05,
+      "delay_1": 1.0
+    },
+    {
+      "K": 11,
+      "no_delay": 0.15,
+      "delay_1": 1.048809
+    },
+    {
+      "K": 12,
+      "no_delay": 0.25,
+      "delay_1": 1.095445
+    }
+  ],
+  "initial_condition_sweep": [
+    {
+      "x0": 0.01,
+      "max_abs": 3.263033,
+      "final_abs": 3.263033
+    },
+    {
+      "x0": 0.1,
+      "max_abs": 32.630326,
+      "final_abs": 32.630326
+    },
+    {
+      "x0": 1.0,
+      "max_abs": 326.303262,
+      "final_abs": 326.303262
+    },
+    {
+      "x0": 10.0,
+      "max_abs": 3263.032623,
+      "final_abs": 3263.032623
+    }
+  ],
+  "noise_test": {
+    "stochastic_term": false,
+    "deterministic_failure": true
+  },
+  "resolution_A": {
+    "name": "feedback_decoupling",
+    "max_abs_state": 1.0,
+    "final_abs_state": 0.0,
+    "stable": true
+  },
+  "resolution_B": {
+    "name": "one_step_predictor",
+    "max_abs_state": 1.0,
+    "final_abs_state": 0.0,
+    "stable": true
+  },
+  "predictor_model_scaling_test": [
+    {
+      "error_pct": 0,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    },
+    {
+      "error_pct": 0.5,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    },
+    {
+      "error_pct": 1,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    },
+    {
+      "error_pct": 2,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    },
+    {
+      "error_pct": 5,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    },
+    {
+      "error_pct": 10,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    },
+    {
+      "error_pct": 20,
+      "max_abs": 1.0,
+      "final_abs": 0.0,
+      "stable": true
+    }
+  ]
+}

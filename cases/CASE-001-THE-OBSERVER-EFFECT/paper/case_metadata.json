@@ -1,0 +1,42 @@
+{
+  "case_id": "CASE-001",
+  "title": "THE OBSERVER EFFECT",
+  "status": "resolved",
+  "class": "deterministic_feedback_instability",
+  "parameters": {
+    "A": 0.95,
+    "B": 0.1,
+    "K": 11.0,
+    "N": 120
+  },
+  "baseline": {
+    "rho": 0.15,
+    "stable": true,
+    "max_abs_x": 1.0,
+    "final_abs_x": 0.0
+  },
+  "failure": {
+    "delay_samples": 1,
+    "rho": 1.048808848,
+    "stable": false,
+    "max_abs_x": 326.303262296441,
+    "final_abs_x": 326.303262296441
+  },
+  "resolution": {
+    "feedback_decoupling": {
+      "stable": true,
+      "max_abs_x": 1.0,
+      "final_abs_x": 0.0
+    },
+    "one_step_predictor": {
+      "stable": true,
+      "max_abs_x": 1.0,
+      "final_abs_x": 0.0
+    }
+  },
+  "figures": [
+    "fig01_state_divergence.png",
+    "fig02_stability_boundary.png",
+    "fig03_resolution.png"
+  ]
+}
